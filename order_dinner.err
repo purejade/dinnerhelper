@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "<string>", line 145, in <module>
+  File "<string>", line 60, in order_dinner
+  File "/Library/Python/2.7/site-packages/requests/sessions.py", line 477, in get
+    return self.request('GET', url, **kwargs)
+  File "/Library/Python/2.7/site-packages/requests/sessions.py", line 465, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Python/2.7/site-packages/requests/sessions.py", line 573, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Python/2.7/site-packages/requests/adapters.py", line 415, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', gaierror(8, 'nodename nor servname provided, or not known'))
+order_dinner returned -1
+Traceback (most recent call last):
+  File "<string>", line 145, in <module>
+  File "<string>", line 60, in order_dinner
+  File "/Library/Python/2.7/site-packages/requests/sessions.py", line 477, in get
+    return self.request('GET', url, **kwargs)
+  File "/Library/Python/2.7/site-packages/requests/sessions.py", line 465, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Python/2.7/site-packages/requests/sessions.py", line 573, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Python/2.7/site-packages/requests/adapters.py", line 415, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', gaierror(8, 'nodename nor servname provided, or not known'))
+order_dinner returned -1
