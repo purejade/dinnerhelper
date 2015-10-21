@@ -1,22 +1,3 @@
-order has some problems
 err in load_config
-err in load_config
-err in load_config
-err in load_config
-err in load_config
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
-order has some problems
+已经订购成功了，请登录http://gourmet.lain.bdp.cc确认
+已经订购成功了，请登录http://gourmet.lain.bdp.cc确认
