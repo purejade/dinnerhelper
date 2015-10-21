@@ -3,11 +3,12 @@
 #example: sh run.sh 11 30 
 # sh run.sh
 
+PDIR=dist
 #read config
 username=`sed '/^用户名=/!d;s/.*=//' config.txt`
 ordertime=`sed '/^预定时间=/!d;s/.*=//' config.txt`
-echo '[username]\nusername='$username'\n[ordertime]\nordertime = '$ordertime > ./order_dinner/config.txt
-cat  本周菜单.txt  > ./order_dinner/本周菜单.txt
+echo '[username]\nusername='$username'\n[ordertime]\nordertime = '$ordertime > ./$PDIR/config.txt
+cat  本周菜单.txt  > ./$PDIR/本周菜单.txt
 
 #parse ordertime
 minute=`echo $ordertime | cut -d ':' -f 2`
@@ -27,6 +28,7 @@ if [ -z "$minute" ]; then
 fi
 
 #generate the plist config
+runfile=88888888
 curDir=`pwd`
 startfile=~/Library/LaunchAgents/com.order.dinner.launchctl.plist
 rm ~/Library/LaunchAgents/com.order.dinner.launchctl.plist
@@ -37,7 +39,7 @@ config='<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.c
 <string>com.order.dinner.launchctl.plist</string>\n
 <key>ProgramArguments</key>\n
 <array>\n
-<string>'$curDir'/order_dinner.sh</string>\n
+<string>'$curDir'/'$runfile'.sh</string>\n
  </array>\n
  <key>StartCalendarInterval</key>\n
  <dict>\n
@@ -67,11 +69,11 @@ launchctl start $startfile
 
 #./order_dinner/order_dinner
 if [ -f "./order_dinner/菜单.txt" ]; then
-	mv ./order_dinner/菜单.txt $curDir
+	mv ./$PDIR/菜单.txt $curDir
 fi
 
 #generate the run comman 
-cp 本周菜单.txt ./order_dinner/
-echo $curDir'/order_dinner/order_dinner' > order_dinner.sh
+cp 本周菜单.txt ./$PDIR/
+echo $curDir'/'$PDIR'/order_dinner' > $runfile'.sh'
 #add the perms
-chmod 777 order_dinner.sh
+chmod 777 $runfile'.sh'
