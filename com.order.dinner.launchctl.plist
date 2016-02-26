@@ -10,10 +10,10 @@
  <key>StartCalendarInterval</key>
  <dict>
  <key>Minute</key>
- <integer>52</integer>
+ <integer>10</integer>
  <key>Hour</key>
  <integer>
-14</integer>
+11</integer>
  </dict>
  <key>StandardOutPath</key>
  <string>/Users/purejade/订餐助手/order_dinner.log</string>

@@ -68,12 +68,14 @@ launchctl load $startfile
 launchctl start $startfile 
 
 #./order_dinner/order_dinner
-if [ -f "./order_dinner/菜单.txt" ]; then
+if [ -f $PDIR"/菜单.txt" ]; then
+	rm 菜单.txt
 	mv ./$PDIR/菜单.txt $curDir
 fi
 
 #generate the run comman 
 cp 本周菜单.txt ./$PDIR/
+echo 'cp '$curDir'/本周菜单.txt '$curDir'/'$PDIR'/' > $runfile'.sh'
 echo $curDir'/'$PDIR'/order_dinner' > $runfile'.sh'
 #add the perms
 chmod 777 $runfile'.sh'
